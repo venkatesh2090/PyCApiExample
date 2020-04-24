@@ -4,7 +4,7 @@ First build the C extension
   ```shell 
     python setup.py build
     ```
-    Copy the shared library and the object file to the root directory.
+    Copy the shared library to the root directory.
 
     
 - To distribute as a global module
