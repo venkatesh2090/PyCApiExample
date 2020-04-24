@@ -13,8 +13,9 @@ static PyObject* spam_system(PyObject *self, PyObject *args) {
     
     status = system(command);
     
-    if (status < 0) {
+    if (status != 0) {
         PyErr_SetString(SpamError, "System command failed");
+        printf("%d", status);
         return NULL;
     }
 
