@@ -89,7 +89,10 @@ PyMODINIT_FUNC PyInit_spam(void) {
      * that we want to own the error class
      */
     Py_XINCREF(SpamError);
+
+    // checking for errors
     if (PyModule_AddObject(m, "error", SpamError) < 0) {
+        // handling our reference counter
         Py_XDECREF(SpamError);
         Py_CLEAR(SpamError);
         Py_DECREF(m);
